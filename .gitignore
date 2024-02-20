@@ -1,0 +1,2 @@
+# Ignore database from source code
+.instance/database.db
