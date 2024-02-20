@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Changed{% endblock %}
+
+{% block content %}
+
+<h1>Notes</h1>
+
+<form method="post">
+    <textarea name="note" id="note" cols="30" rows="10"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+<ul id="notes">
+    {% for note in user.notes %}
+    <li>
+        <p>{{ note.data }}</p> 
+        <button onClick="deleteNote({{note.id}})">Delete</button>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+<!--
+
+    https://www.youtube.com/watch?v=dam0GPOAvVI
+
+    40:19
+
+-->
